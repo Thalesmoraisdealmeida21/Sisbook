@@ -1,0 +1,90 @@
+<%- include ./../layout/header %>
+
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4">
+          <form method="get" id="form-search">
+          <div class="form-group">
+            <input type="text" name="search" class="form-control">
+          </div>
+        
+        </div>
+
+        <div class="col-2">
+            <select name="field" class="form-control" id="exampleFormControlSelect1">
+              <option>Nome</option>
+              <option>Codigo</option>
+              <option>Turma</option>
+              <option>Idade</option>
+  
+            </select>
+        </div>
+     
+
+        <div class="col-2">
+          <input type="submit" class="btn btn-success" value="Buscar">
+        </div>
+           </form>
+
+         <div class="col-2"></div>
+            <div class="col-2">
+            <a href="/alunos/register">
+                  <button class="btn btn-success"> 
+                  Novo Aluno
+                  <i class="fas fa-plus-square"></i>
+
+                    </button>
+            </a>
+
+            </div>
+        </div>
+
+<br />
+
+
+
+<div class="container">
+<div class="card">
+ <div class="card-body">
+ <table id="table-aluno" class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Turma</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% console.log(alunos) 
+  alunos.forEach((aluno)=>{ %>
+    <tr>
+
+      <th scope="row"><%= aluno.AL_ID%></th>
+      <td><%= aluno.AL_NAME %></td>
+      <td><%= aluno.turma.TR_NAME %></td>
+      <td>
+      <a href="/alunos/<%= aluno.AL_ID %>">
+            <button class="btn btn-sm btn-warning">Editar</button>  
+      </a>
+      <a href="/alunos/delete/<%= aluno.AL_ID %>">
+            <button class="btn btn-sm btn-danger">Excluir</button> 
+      <a>
+      </td>
+    </tr>
+    <% })%>
+  </tbody>
+</table>
+ </div>
+</div>
+</div>
+
+
+<script src="../../../js/alunoIndex.js"></script>
+
+<%- include ./../layout/footer %>

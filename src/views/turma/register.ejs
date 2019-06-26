@@ -1,0 +1,73 @@
+<%- include ./../layout/header %>
+
+<link rel="stylesheet" href="/../../css/turma.css">
+
+
+
+
+<div style="display: none" id="msgAlert" class="alert alert-success">
+  
+</div>
+
+<a href="/turmas/register">
+<button style="display: none" id="btnNovaTurma" class="btn btn-success">Nova Turma</button>
+</a>
+
+
+<a href="/turmas">
+<button style="display: none" id="btnBack" class="btn btn-secondary">Listar turmas</button>
+</a>
+
+<div class="container">
+<div class="card">
+<div class="card-body">
+      <form id="formTurma">
+  
+  <div class="form-group">
+    <label for="turma">Nome da Turma</label>
+    <input name="name" type="text" class="form-control" id="turma" placeholder="">
+  </div>
+  <div class="form-row">
+  
+    <div class="form-group col-md-6">
+      <label>Escolaridade</label>
+      <select name="schooling" id="inputAno" class="form-control">
+        <option>Ensino medio</option>
+        <option>Ensino Fundamental</option>
+      </select>
+    </div>
+    
+    <!-- Ajustar para considerar somente se for Ensino Medio se não somente até o 3 ano-->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Ano/Serie</label>
+        <select name="year" id="inputAno2" class="form-control">
+            <option>1 Ano</option>
+            <option>2 Ano</option>
+            <option>3 Ano</option>
+        </select>
+    </div>
+
+  </div>
+
+    <div class="form-group">
+    <label for="turma">Observação</label>
+    <textarea name="obs" type="text" class="form-control" id="obs" rows="7"></textarea></div>
+
+
+  
+  <button type="submit" class="btn btn-primary">Cadastrar Turma</button>
+  <a href="/turmas">
+  <button type="button" class="btn btn-secondary">Voltar</button>
+  </a>
+</form>
+
+</div>
+</div>
+</div>
+
+
+
+
+<script src="./../../js/turma.js"></script>
+
+<%- include ./../layout/footer %>

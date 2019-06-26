@@ -1,0 +1,25 @@
+<%- include ./../layout/header %>
+
+
+
+<form action="/user/edit/<%= user.US_ID %>" method="get">
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" class="form-control" id="email" value="<%= user.US_EMAIL%>" placeholder="E-mail">
+    </div>
+    <div class="form-group">
+        <label for="Username">Username</label>
+        <input type="text" name="username" class="form-control" value="<%= user.US_USERNAME %>" id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password"class="form-control" value="**********" id="password" placeholder="Password">
+    </div>
+
+  
+        <button class="btn btn-info">Atualizar Cadastro</button>
+  
+</form>
+
+
+<%- include ./../layout/footer %>

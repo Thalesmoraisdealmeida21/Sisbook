@@ -1,0 +1,55 @@
+<% include ./../layout/header %>
+
+
+
+
+<form method="get" action="/turmas/update/save/<%= turma.TR_ID %>">
+  
+<%if(msg){%>
+<div class="alert alert-success" role="alert">
+  <%= msg %>
+</div>
+
+<%}%>
+  <div class="form-group">
+    <span style="font-weight: 700"> CODIGO: <%= turma.TR_ID%></span>
+     </div>
+
+  <div class="form-group">
+    <label for="turma">Nome da Turma</label>
+    <input name="name" type="text" class="form-control" value="<%= turma.TR_NAME %>" id="turma" placeholder="" readonly>
+  </div>
+  
+  <div class="form-row">
+  
+    <div class="form-group col-md-6">
+      <label>Escolaridade</label>
+    
+      <input class="form-control" readonly type="text" value="<%= turma.TR_SCHOOLING %>">
+    </div>
+    
+    <!-- Ajustar para considerar somente se for Ensino Medio se não somente até o 3 ano-->
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Ano/Serie</label>
+          <input class="form-control" readonly type="text" value="<%= turma.TR_YEAR %> Ano">
+    
+    </div>
+
+  </div>
+
+    <div class="form-group">
+    <label for=". /turma">Observação</label>
+    <textarea name="obs" type="text" class="form-control" id="obs" rows="7"><%= turma.TR_OBS%></textarea></div>
+
+
+  
+  <button type="submit" class="btn btn-primary">Atualizar</button>
+  <a href="/../turmas/">
+  <button type="button" class="btn btn-secondary">Voltar</button>
+  </a>
+</form>
+
+</form>
+<script src="./../../../js/turmaUpdate.js"></script>
+
+<% include ./../layout/footer %>

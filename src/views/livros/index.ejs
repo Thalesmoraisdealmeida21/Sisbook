@@ -1,0 +1,103 @@
+<%- include ./../layout/header %>
+
+
+
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-4">
+          <form method="get" id="form-search">
+          <div class="form-group">
+            <input type="text" name="search" class="form-control">
+          </div>
+        
+        </div>
+
+        <div class="col-2">
+            <select name="field" class="form-control" id="exampleFormControlSelect1">
+              <option>Titulo</option>
+              <option>Codigo</option>
+              <option>Autor</option>
+              <option>Observação</option>
+              <option>Genero</option>
+              <option>Sinopse</option>
+            </select>
+        </div>
+     
+
+        <div class="col-2">
+          <input type="submit" class="btn btn-success" value="Buscar">
+        </div>
+           </form>
+
+         <div class="col-2"></div>
+            <div class="col-2">
+            <a href="/livros/new">
+                  <button class="btn btn-success"> 
+                  Novo Livro
+                  <i class="fas fa-plus-square"></i>
+
+                    </button>
+            </a>
+
+            </div>
+        </div>
+
+<br>
+
+        <table id="table-book" class="table table-hover">
+          <thead>
+            <tr>
+            
+              <th scope="col">#</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Autor</th>
+              <th scope="col">Genero</th>
+              <th scope="col">Opções</th>
+            </tr>
+          </thead>
+
+          <% books.forEach((book)=>{ %>
+          <tbody>
+          <td><%= book.BK_ID %></td>
+          <td><%= book.BK_TITLE  %></td>
+          <td><%= book.BK_AUTOR  %></td>
+          <td><%= book.BK_GENRE  %></td>
+          <td>
+
+              <a href="/livros/edit/<%= book.BK_ID%>">
+                  <button class="btn btn-sm btn-warning">Editar</button>
+              </a>
+
+              <a href="/livros/delete/<%= book.BK_ID %>">
+                  <button class="btn btn-sm btn-danger">Excluir</button>
+              </a>
+
+          </td>
+          
+
+                    
+
+
+          <%})%>
+          </tbody>
+
+
+        </table>
+
+        <nav aria-label="Page navigation example">
+          <ul id="pagination-books"class="pagination">
+          
+          </ul>
+        </nav>
+
+
+    </div>
+  </div>
+</div>
+
+
+<script src="../../../js/livro.js"></script>
+    
+<%- include ./../layout/footer%>

@@ -1,0 +1,1 @@
+const urlSearch=window.location.search,result=urlSearch.substring(urlSearch.indexOf("=")+1,urlSearch.length);"true"==result&&alertify.notify("Registro salvo com sucesso","success",10,function(){console.log("dismissed")});

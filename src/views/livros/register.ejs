@@ -1,0 +1,48 @@
+<%- include ./../layout/header %>
+
+<div class="container">
+    <div class="card">
+
+    <div class="card-header">
+        <%= titlePanel %>
+    </div>
+        <div class="card-body">
+            <form method="post" action="/livros/register">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                        <label for="title">Titulo</label>
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Titulo do Livro">
+                        </div>
+                        <div class="form-group col-md-6">
+                        <label for="author">Autor</label>
+                        <input type="text" name="author" class="form-control" id="author" placeholder="Autor">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Genero</label>
+                        <input type="text" class="form-control" name="genre" id="genre" placeholder="Escolha o genero do livro">
+                    </div>
+                   
+                    <div class="form-group">
+                        <label for="obs">Sinopse</label>
+                        <textarea type="text" name="sinopse" class="form-control" id="sinopse"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="obs">Observações</label>
+                        <textarea type="text" name="obs" class="form-control" id="obs"></textarea>
+                    </div>
+                  
+                  
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cadastrar Livro</button>
+             </form>
+        </div>
+    </div>
+
+</div>
+
+
+<%- include ./../layout/footer %>
+
+          

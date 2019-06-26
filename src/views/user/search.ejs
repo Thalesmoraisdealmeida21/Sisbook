@@ -1,0 +1,37 @@
+<%- include ./../layout/header %>
+
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Username</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+
+  <% %>
+  <tbody>
+  <% usuarios.forEach((user) => {%>
+    <tr>
+      <th scope="row"><%= user.US_ID %></th>
+      <td><%= user.US_USERNAME %></td>
+      <td><%= user.US_EMAIL %></td>
+      <td> 
+        <a href="/user/update/<%= user.US_ID %>">
+          <button class="btn btn-info">Editar</button>
+        </a>
+      
+       <a href="/user/delete/<%= user.US_ID %>" +  >
+      <button class="btn btn-danger">Excluir</button>
+      </a>
+      </td>
+    </tr>
+  <% }) %>
+  </tbody>
+</table>
+</div>
+
+<%- include ./../layout/footer %>
